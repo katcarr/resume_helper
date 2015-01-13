@@ -1,0 +1,42 @@
+<h1>Welcome to The Resume Helper</h1>
+
+<h3>Add jobs here</h3>
+
+<form action="/job_added" method="post">
+  <div class="form-group">
+    <label for="employer">Employer Name:</label>
+    <input id="employer" name="employer" type='text' placeholder="Bark Around Town" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="title">Job Title:</label>
+    <input id="title" name="title" type='text' placeholder="Dog Walker">
+  </div>
+  <div class="form-group">
+    <label for="description">Job Description:</label>
+    <input id="description" name="description" type='text' placeholder="Walk pups">
+  </div>
+  <div class="form-group">
+    <label for="start_date">Start date:</label>
+    <input id="start_date" name="start_date" type='text' placeholder="mm/yyyy">
+  </div>
+  <div class="form-group">
+    <label for="end_date">End date:</label>
+    <input id="end_date" name="end_date" type='text' placeholder="mm/yyyy">
+  </div>
+
+  <button type="submit" class="btn-primary">Add Job!</button>
+</form>
+<div class="input">
+  <h3>Your Jobs</h3>
+
+  <ul>
+    <% @jobs.each() do |job|%>
+      <li>Employer: <%= job.employer() %></li>
+      <li>Title: <%= job.title() %></li>
+      <li>Description: <%= job.description() %></li>
+      <li>Start Date: <%= job.start_date() %></li>
+      <li>End Date: <%= job.end_date() %></li>
+      <hr>
+    <% end %>
+  </ul>
+</div>
